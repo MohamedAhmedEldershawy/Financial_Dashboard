@@ -240,7 +240,7 @@ a {
 .color-red {
   color: #e7000b;
 }
-.recent-activities-card{
+.recent-activities-card {
   margin-top: 20px;
 }
 .recent-activities-card .inner {
@@ -273,7 +273,7 @@ a {
 }
 .recent-activities-card .inner .contain::before {
   content: "";
-  width: 1%;
+  width: 3%;
   height: 100%;
   background-color: #2b7fff;
   position: absolute;
@@ -281,11 +281,17 @@ a {
   left: -1%;
   border-top-left-radius: 100px;
   border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  z-index: -1;
 }
+
 
 .recent-activities-card .contain span {
   font-size: 12px;
   color: #155dfc;
+  font-weight: 500;
+  padding-left: 10px;
 }
 .recent-activities-card .contain .item {
   width: 70%;
@@ -328,7 +334,85 @@ a {
 .recent-activities-card .contain .item span.time {
   padding-right: 40px;
   padding-top: 25px;
+  color: #6a7282;
+  font-weight: 600;
 }
+
+.recent-activities-card .inner .contain-1 {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  background-color: #f0fdf4;
+  border: 1px solid #f0fdf4;
+  border-radius: 9px;
+  position: relative;
+}
+.recent-activities-card .inner .contain-1::before {
+  content: "";
+  width: 3%;
+  height: 100%;
+  background-color: #00C950;
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  border-bottom-left-radius: 100px;
+  z-index: -1;
+}
+
+.recent-activities-card .contain-1 span {
+  font-size: 12px;
+  color: #00a63e;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.recent-activities-card .contain-1 .item {
+  width: 70%;
+  padding: 20px 15px;
+}
+.recent-activities-card .contain-1 .detail {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+.recent-activities-card .contain-1 .detail .img {
+  width: 12%;
+  background-color: #dbeafe;
+  border-radius: 50%;
+  padding: 7px;
+}
+.recent-activities-card .contain-1 .detail .img img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recent-activities-card .contain-1 .detail .info span {
+  font-weight: 700;
+  color: #101828;
+  width: 20%;
+}
+.recent-activities-card .contain-1 .detail .info p {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5565;
+}
+.recent-activities-card .contain-1 .detail span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a5565;
+}
+.recent-activities-card .contain-1 .item span.time {
+  padding-right: 40px;
+  padding-top: 25px;
+  color: #6a7282;
+  font-weight: 600;
+}
+
 .recent-activities-card .inner .show {
   padding: 16px 0 0 0;
   text-align: center;
