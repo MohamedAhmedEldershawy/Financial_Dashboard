@@ -22,55 +22,166 @@ a {
 
 .container {
   display: grid;
-  grid-template-rows: repeat(11, auto);
+  grid-template-rows: repeat(12, auto);
   grid-auto-columns: 1fr;
+  grid-auto-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
 }
 
-.header-section {
+.Sidebar {
   grid-area: 1 / 1 / 2 / 2;
 }
 
 .current-balance-card {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.header-section {
   grid-area: 2 / 1 / 3 / 2;
 }
 
 .income-card {
-  grid-area: 3 / 1 / 4 / 2;
-}
-
-.expenses-card {
   grid-area: 4 / 1 / 5 / 2;
 }
 
-.recent-activities-card {
+.expenses-card {
   grid-area: 5 / 1 / 6 / 2;
 }
 
-.recent-transactions-card {
+.recent-activities-card {
   grid-area: 6 / 1 / 7 / 2;
 }
 
-.monthly-bills-card {
+.recent-transactions-card {
   grid-area: 7 / 1 / 8 / 2;
 }
 
-.budget-overview-card {
+.monthly-bills-card {
   grid-area: 8 / 1 / 9 / 2;
 }
 
-.income-vs-expenses-chart-card {
+.budget-overview-card {
   grid-area: 9 / 1 / 10 / 2;
 }
 
-.account-summary-card {
+.income-vs-expenses-chart-card {
   grid-area: 10 / 1 / 11 / 2;
 }
 
-.payment-methods-card {
+.account-summary-card {
   grid-area: 11 / 1 / 12 / 2;
 }
+
+.payment-methods-card {
+  grid-area: 12 / 1 / 13 / 2;
+}
+
+.action-item {
+  transition: all 0.3s ease;
+}
+
+.action-item:hover {
+  transform: translate(3px, -3px);
+}
+
+.action-item:hover .action-text {
+  color: #111827 !important;
+}
+
+.Sidebar .inner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  height: 100dvh;
+
+  background-color: #f9fafb;
+  padding: 24px 20px;
+  border-left: 1px solid #e5e7eb;
+  overflow-y: auto;
+  display: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.icon-box {
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-14 {
+  margin-top: 14px;
+}
+.mt-20 {
+  margin-top: 20px;
+}
+.mt-30 {
+  margin-top: 30px;
+}
+.mt-35 {
+  margin-top: 35px;
+}
+.mt-40 {
+  margin-top: 40px;
+}
+.mt-60 {
+  margin-top: 60px;
+}
+.pb-10 {
+  padding-bottom: 10px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.color-1447e6 {
+  color: #1447e6;
+}
+.color-155DFC {
+  color: #155dfc;
+}
+.color-8D95A1 {
+  color: #8d95a1;
+}
+.color-6A7282 {
+  color: #6a7282;
+}
+
+.background-2F4DEF {
+  background-color: #2f4def;
+}
+.bg-EFF6FF {
+  background-color: #eff6ff;
+}
+
+.border-bottom-e5e7eb {
+  border-bottom: 1px solid #e5e7eb;
+}
+.border-e5e7eb {
+  border: 1px solid #e5e7eb;
+}
+
+.border-radius-15 {
+  border-radius: 15px;
+}
+.border-radius-12 {
+  border-radius: 12px;
+}
+.border-radius-10 {
+  border-radius: 10px;
+}
+
+.padding-6-10 {
+  padding: 6px 10px;
+}
+
 .header-section {
   margin-top: 14px;
 }
@@ -140,12 +251,12 @@ a {
 .header-section .item .search .icon-1 sup {
   border-radius: 100%;
   background-color: #fb2c36;
-  border: 1px solid #fb2c36;
+  padding: 0 4px;
   color: #fff;
   position: absolute;
   top: -10px;
-  right: -2px;
-  font-size: 12px;
+  right: -4px;
+  font-size: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -620,7 +731,9 @@ a {
   font-weight: 700;
 }
 .monthly-bills-card .inner .title div span.pointer {
-  transition: cursor 0.3s , color .2s;
+  transition:
+    cursor 0.3s,
+    color 0.2s;
 }
 .monthly-bills-card .inner .info {
   padding: 10px 0;
@@ -677,8 +790,8 @@ a {
   border: 1px solid #e2c6c8;
   border-radius: 15px;
 }
-.budget-overview-card .inner .title div span.pointer{
-  transition: all .2s;
+.budget-overview-card .inner .title div span.pointer {
+  transition: all 0.2s;
 }
 .budget-overview-card .inner .title div span.pointer:hover {
   cursor: pointer;
@@ -726,13 +839,15 @@ a {
   padding: 20px 10px;
   background-color: #eef4ff;
   border-radius: 14px;
-  border: 1px solid #DCE0E4;
+  border: 1px solid #dce0e4;
   margin-top: 20px;
-  transition: transform .2s , box-shadow .3s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.3s;
 }
-.budget-overview-card .inner .entertainment:hover{
-transform: translateY(-2px);
-box-shadow: 0 3px 2px 2px #DCE0E4;
+.budget-overview-card .inner .entertainment:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 2px 2px #dce0e4;
 }
 .budget-overview-card .inner .entertainment .parent {
   width: 100%;
@@ -747,16 +862,16 @@ box-shadow: 0 3px 2px 2px #DCE0E4;
   background-color: #ff6900;
   margin-left: auto;
 }
-.background-DCFCE7{
-  background-color: #DCFCE7;
+.background-DCFCE7 {
+  background-color: #dcfce7;
 }
-.color-991b1b{
+.color-991b1b {
   color: #991b1b;
 }
-.background-FEE2E2{
-  background-color: #FEE2E2;
+.background-FEE2E2 {
+  background-color: #fee2e2;
 }
-.padding-4-10{
+.padding-4-10 {
   padding: 4px 10px;
   border-radius: 15px;
 }
@@ -764,13 +879,15 @@ box-shadow: 0 3px 2px 2px #DCE0E4;
   padding: 20px 10px;
   background-color: #eef4ff;
   border-radius: 14px;
-  border: 1px solid #DCE0E4;
+  border: 1px solid #dce0e4;
   margin-top: 14px;
-  transition: transform .2s , box-shadow .3s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.3s;
 }
-.budget-overview-card .inner .Bills:hover{
-transform: translateY(-2px);
-box-shadow: 0 3px 2px 2px #DCE0E4;
+.budget-overview-card .inner .Bills:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 2px 2px #dce0e4;
 }
 .budget-overview-card .inner .Bills .parent {
   margin-top: 5px;
@@ -783,32 +900,34 @@ box-shadow: 0 3px 2px 2px #DCE0E4;
   width: 100%;
   height: 100%;
   border-radius: 20px;
-  background-color: #FB2C36;
+  background-color: #fb2c36;
   margin-left: auto;
 }
-.color-92400e{
+.color-92400e {
   background-color: #92400e;
 }
-.background-FEF3C7{
-  background-color: #FEF3C7;
+.background-FEF3C7 {
+  background-color: #fef3c7;
 }
-.background-FCE7F3{
-  background-color: #FCE7F3;
+.background-FCE7F3 {
+  background-color: #fce7f3;
 }
-.color-E60076{
-  color: #E60076;
+.color-E60076 {
+  color: #e60076;
 }
 .budget-overview-card .inner .health {
   padding: 20px 10px;
   background-color: #eef4ff;
   border-radius: 14px;
-  border: 1px solid #DCE0E4;
+  border: 1px solid #dce0e4;
   margin-top: 14px;
-  transition: transform .2s , box-shadow .3s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.3s;
 }
-.budget-overview-card .inner .health:hover{
-transform: translateY(-2px);
-box-shadow: 0 3px 2px 2px #DCE0E4;
+.budget-overview-card .inner .health:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 2px 2px #dce0e4;
 }
 .budget-overview-card .inner .health .parent {
   margin-top: 5px;
@@ -821,20 +940,22 @@ box-shadow: 0 3px 2px 2px #DCE0E4;
   width: 80%;
   height: 100%;
   border-radius: 20px;
-  background-color: #F6339A;
+  background-color: #f6339a;
   margin-left: auto;
 }
-.budget-overview-card .inner .Home-supplies{
+.budget-overview-card .inner .Home-supplies {
   padding: 20px 10px;
   background-color: #eef4ff;
   border-radius: 14px;
-  border: 1px solid #DCE0E4;
+  border: 1px solid #dce0e4;
   margin-top: 14px;
-  transition: transform .2s , box-shadow .3s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.3s;
 }
-.budget-overview-card .inner .Home-supplies:hover{
-transform: translateY(-2px);
-box-shadow: 0 3px 2px 2px #DCE0E4;
+.budget-overview-card .inner .Home-supplies:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 2px 2px #dce0e4;
 }
 .budget-overview-card .inner .Home-supplies .parent {
   margin-top: 5px;
@@ -843,18 +964,16 @@ box-shadow: 0 3px 2px 2px #DCE0E4;
   height: 7px;
   background-color: #e5e7eb;
 }
-.budget-overview-card .inner .Home-supplies  .parent .child {
+.budget-overview-card .inner .Home-supplies .parent .child {
   width: 86%;
   height: 100%;
   border-radius: 20px;
-  background-color: #00C950;
+  background-color: #00c950;
   margin-left: auto;
 }
+
 .income-vs-expenses-chart-card .inner .title div span.pointer {
-  transition: cursor 0.3s;
-}
-.income-vs-expenses-chart-card .inner .title div span.pointer{
-  transition: .3s;
+  transition: 0.3s;
 }
 .income-vs-expenses-chart-card .inner .title div span.pointer:hover {
   cursor: pointer;
@@ -868,105 +987,522 @@ box-shadow: 0 3px 2px 2px #DCE0E4;
   border: 1px solid #e2c6c8;
   border-radius: 15px;
 }
-.income-vs-expenses-chart-card .inner .parent{
+.income-vs-expenses-chart-card .inner .parent {
   width: 12px;
-  height: 12px;px ;
-  background-color:#EF4444 ;
+  height: 12px;
+  background-color: #ef4444;
   border-radius: 3px;
 }
 
-.income-vs-expenses-chart-card .inner .child{
+.income-vs-expenses-chart-card .inner .child {
   width: 12px;
-  height:12px ;
-  background-color:#10B981;
+  height: 12px;
+  background-color: #10b981;
   border-radius: 3px;
 }
-.color-64748b{
+.color-64748b {
   color: #64748b;
 }
-.income-vs-expenses-chart-card .inner .anylises{
+.income-vs-expenses-chart-card .inner .anylises {
   padding-top: 65px;
   gap: 60px;
 }
-.income-vs-expenses-chart-card .inner .anylises .align-item-end{
+.income-vs-expenses-chart-card .inner .anylises .align-item-end {
   align-items: flex-end;
 }
-.income-vs-expenses-chart-card .inner .anylises .column-1{
-  width:16px ;
-  height:44px ;
-    background-color:#EF4444 ;
+.income-vs-expenses-chart-card .inner .anylises .column-1 {
+  width: 16px;
+  height: 44px;
+  background-color: #ef4444;
+  transition: 0.5s;
 }
-.income-vs-expenses-chart-card .inner .anylises .min-column-1{
-  width:15px ;
+.income-vs-expenses-chart-card .inner .anylises .column-1:hover {
+  background-color: #f26969;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-1 {
+  width: 15px;
   height: 95px;
-background-color: #10B981;
+  background-color: #10b981;
+  transition: 0.5s;
 }
-.income-vs-expenses-chart-card .inner .anylises .column-2{
-  width:15px ;
+.income-vs-expenses-chart-card .inner .anylises .min-column-1:hover {
+  background-color: #40c79a;
+}
+.income-vs-expenses-chart-card .inner .anylises .column-2 {
+  width: 15px;
   height: 38px;
-  background-color:#EF4444 ;
+  background-color: #ef4444;
+  transition: 0.5s;
 }
-.income-vs-expenses-chart-card .inner .anylises .min-column-2{
+.income-vs-expenses-chart-card .inner .anylises .column-2:hover {
+  background-color: #f26969;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-2 {
   width: 15px;
   height: 91px;
-  background-color: #10B981;
+  background-color: #10b981;
+  transition: 0.5s;
 }
-.income-vs-expenses-chart-card .inner .anylises .column-3{
-  width: 15px ;
-  height:44px ;
-  background-color:#EF4444 ;
+.income-vs-expenses-chart-card .inner .anylises .min-column-2:hover {
+  background-color: #40c79a;
 }
-.income-vs-expenses-chart-card .inner .anylises .min-column-3{
+.income-vs-expenses-chart-card .inner .anylises .column-3 {
+  width: 15px;
+  height: 44px;
+  background-color: #ef4444;
+}
+.income-vs-expenses-chart-card .inner .anylises .column-3:hover {
+  background-color: #f26969;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-3 {
   width: 15px;
   height: 98px;
-background-color: #10B981;
+  background-color: #10b981;
+  transition: 0.5s;
 }
-.income-vs-expenses-chart-card .inner .anylises .column-4{
+.income-vs-expenses-chart-card .inner .anylises .min-column-3:hover {
+  background-color: #40c79a;
+}
+.income-vs-expenses-chart-card .inner .anylises .column-4 {
   width: 15px;
   height: 42px;
-  background-color:#EF4444 ;
+  background-color: #ef4444;
+  transition: 0.5s;
 }
-.income-vs-expenses-chart-card .inner .anylises .min-column-4{
-  width:15px ;
-  height:92px ;
-  background-color: #10B981;
+.income-vs-expenses-chart-card .inner .anylises .column-4:hover {
+  background-color: #f26969;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-4 {
+  width: 15px;
+  height: 92px;
+  background-color: #10b981;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-4:hover {
+  background-color: #40c79a;
 }
 .account-summary-card .inner .title div span.pointer {
   transition: cursor 0.3s;
 }
-.inner .title div span.pointer{
-  transition: .3s;
+.inner .title div span.pointer {
+  transition: 0.3s;
 }
-.account-summary-card  .inner .title div span.pointer:hover {
+.account-summary-card .inner .title div span.pointer:hover {
   cursor: pointer;
   color: #101828;
 }
 .account-summary-card {
   margin-top: 20px;
 }
-.account-summary-card  .inner {
+.account-summary-card .inner {
   padding: 20px 15px;
   border: 1px solid #e2c6c8;
   border-radius: 15px;
 }
-.color-9810FA{
-  color: #9810FA;
+.color-9810FA {
+  color: #9810fa;
 }
-.account-summary-card  .inner .current-account{
+.account-summary-card .inner .current-account {
   padding: 16px;
   margin-top: 24px;
-  border: 1px solid #F9FAFB;
+  border: 1px solid #f9fafb;
   border-radius: 15px;
 }
-.account-summary-card  .inner .Savings-account{
+.account-summary-card .inner .Savings-account {
   padding: 16px;
   margin-top: 15px;
-  border: 1px solid #F9FAFB;
+  border: 1px solid #f9fafb;
   border-radius: 15px;
 }
-.account-summary-card  .inner .credit-card {
+.account-summary-card .inner .credit-card {
   padding: 16px;
   margin-top: 15px;
-  border: 1px solid #F9FAFB;
+  border: 1px solid #f9fafb;
   border-radius: 15px;
+}
+.income-vs-expenses-chart-card .inner .title div span.pointer {
+  transition: 0.3s;
+}
+.payment-methods-card .inner .title div span.pointer:hover {
+  cursor: pointer;
+  color: #101828;
+}
+.payment-methods-card {
+  margin-top: 20px;
+}
+.payment-methods-card .inner {
+  padding: 20px 15px;
+  border: 1px solid #e2c6c8;
+  border-radius: 15px;
+  perspective: 1000px;
+}
+
+.payment-methods-card .inner .visa-card {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: transform 0.6s;
+}
+
+.payment-methods-card .inner .visa-card .front {
+  padding: 29px;
+  background-color: #5348b8;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment-methods-card .inner .visa-card:hover {
+  transform: rotatey(180deg);
+}
+
+.payment-methods-card .inner .visa-card .front .parent {
+  width: 45px;
+  height: 30px;
+  padding: 4px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #5f55bd;
+}
+
+.payment-methods-card .inner .visa-card .front .parent .child {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: #9f99d7;
+}
+
+.bacground-fff {
+  background-color: #fff;
+}
+
+.padding-4-2 {
+  padding: 2px 4px;
+}
+
+.background-5348B8 {
+  color: #5348b8;
+}
+
+.color-fff {
+  color: #fff;
+}
+
+.color-372AAC {
+  color: #372aac;
+}
+
+.payment-methods-card .inner .visa-card .front .icon {
+  position: relative;
+}
+
+.payment-methods-card .inner .visa-card .front span.positioning {
+  position: absolute;
+  top: -65%;
+  left: -17px;
+  background-color: #5348b8c9;
+  padding: 4px 15px;
+  border-radius: 15px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.padding-top-44 {
+  padding-top: 44px;
+}
+
+.padding-top-20 {
+  padding-top: 20px;
+}
+
+.payment-methods-card .inner .visa-card .back {
+  padding: 29px;
+  background-color: #0f1624;
+  border-radius: 15px;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment-methods-card .inner .visa-card .back .black {
+  width: 100%;
+  height: 25px;
+  background-color: #1d1d1dea;
+  border-radius: 6px;
+}
+
+.payment-methods-card .inner .visa-card .back .parent {
+  width: 100%;
+  height: 25px;
+  border-radius: 6px;
+  background-color: #f1f4f8;
+}
+
+.payment-methods-card .inner .visa-card .back .parent .child {
+  padding: 0 4px 0 20px;
+}
+.payment-methods-card .inner .visa-card .back .parent .child .bg {
+  background-color: #d6d9dd;
+  width: 89%;
+  height: 10px;
+  transform: skewX(-6deg);
+}
+
+.font-10 {
+  font-size: 10px;
+}
+
+.color-ffffff7 {
+  color: #ffffff7a;
+}
+
+.color-F1F4F8 {
+  color: #f1f4f8;
+}
+
+.color-000000d9 {
+  color: #000000d9;
+}
+
+.color-111827 {
+  color: #111827;
+}
+
+.color-d1d5dc {
+  color: #d1d5dc;
+}
+
+.payment-methods-card .inner .visa-card .back .number {
+  margin-top: 55px;
+  position: relative;
+}
+
+.payment-methods-card .inner .visa-card .back .number span.position {
+  position: absolute;
+  top: -23px;
+  left: 27px;
+}
+
+.margin-8 {
+  margin-top: 8px;
+}
+
+.margin-10 {
+  margin-top: 10px;
+}
+.payment-methods-card .inner .mastercard-container {
+  perspective: 1000px;
+}
+
+.payment-methods-card .inner .mastercard-card {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: transform 0.6s;
+  margin-top: 16px;
+}
+
+.payment-methods-card .inner .mastercard-container:hover .mastercard-card {
+  transform: rotateY(180deg);
+}
+
+.payment-methods-card .inner .mastercard-card .front {
+  padding: 29px;
+  background-color: #c01a3a;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment-methods-card .inner .mastercard-card .front .parent {
+  width: 45px;
+  height: 30px;
+  padding: 4px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #ffffff33;
+}
+
+.payment-methods-card .inner .mastercard-card .front .parent .child {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: #ffffff66;
+}
+
+.color-C01A3A {
+  color: #c01a3a;
+}
+
+.payment-methods-card .inner .mastercard-card .front .icon {
+  position: relative;
+}
+
+.payment-methods-card .inner .mastercard-card .back {
+  padding: 29px;
+  background-color: #0f1624;
+  border-radius: 15px;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment-methods-card .inner .mastercard-card .back .black {
+  width: 100%;
+  height: 25px;
+  background-color: #1d1d1dea;
+  border-radius: 6px;
+}
+
+.payment-methods-card .inner .mastercard-card .back .parent {
+  width: 100%;
+  height: 25px;
+  border-radius: 6px;
+  background-color: #f1f4f8;
+}
+
+.payment-methods-card .inner .mastercard-card .back .parent .child {
+  padding: 0 4px 0 20px;
+}
+
+.payment-methods-card .inner .mastercard-card .back .parent .child .bg {
+  background-color: #d6d9dd;
+  width: 89%;
+  height: 10px;
+  transform: skewX(-6deg);
+}
+
+.payment-methods-card .inner .mastercard-card .back .number {
+  margin-top: 55px;
+  position: relative;
+}
+
+.payment-methods-card .inner .mastercard-card .back .number span.position {
+  position: absolute;
+  top: -23px;
+  left: 27px;
+}
+
+.payment-methods-card .inner .paypal-container {
+  perspective: 1000px;
+}
+
+.payment-methods-card .inner .paypal-card {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 220px;
+  transition: transform 0.6s;
+  margin-top: 16px;
+}
+
+.payment-methods-card .inner .paypal-container:hover .paypal-card {
+  transform: rotateY(180deg);
+}
+.payment-methods-card .inner .paypal-card .front {
+  padding: 29px;
+  background-color: #1b3ab4;
+  border-radius: 15px;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment-methods-card .inner .paypal-card .front .parent {
+  width: 45px;
+  height: 30px;
+  padding: 4px;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #ffffff33;
+}
+
+.payment-methods-card .inner .paypal-card .front .parent .child {
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: #ffffff66;
+}
+
+.payment-methods-card .inner .paypal-card .front .icon {
+  position: relative;
+}
+
+.payment-methods-card .inner .paypal-card .back {
+  padding: 29px;
+  background-color: #0f1624;
+  border-radius: 15px;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.payment-methods-card .inner .paypal-card .back .black {
+  width: 100%;
+  height: 25px;
+  background-color: #1d1d1dea;
+  border-radius: 6px;
+}
+
+.payment-methods-card .inner .paypal-card .back .parent {
+  width: 100%;
+  height: 25px;
+  border-radius: 6px;
+  background-color: #f1f4f8;
+}
+
+.payment-methods-card .inner .paypal-card .back .parent .child {
+  padding: 0 4px 0 20px;
+}
+
+.payment-methods-card .inner .paypal-card .back .parent .child .bg {
+  background-color: #d6d9dd;
+  width: 89%;
+  height: 10px;
+  transform: skewX(-6deg);
+}
+
+.payment-methods-card .inner .paypal-card .back .number {
+  margin-top: 55px;
+  position: relative;
+}
+
+.payment-methods-card .inner .paypal-card .back .number span.position {
+  position: absolute;
+  top: -23px;
+  left: 27px;
+}
+
+.color-00d166 {
+  color: #00d166;
+}
+
+.text-align-start {
+  text-align: start;
 }
