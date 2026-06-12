@@ -931,3 +931,42 @@ background-color: #10B981;
   height:92px ;
   background-color: #10B981;
 }
+.account-summary-card .inner .title div span.pointer {
+  transition: cursor 0.3s;
+}
+.inner .title div span.pointer{
+  transition: .3s;
+}
+.account-summary-card  .inner .title div span.pointer:hover {
+  cursor: pointer;
+  color: #101828;
+}
+.account-summary-card {
+  margin-top: 20px;
+}
+.account-summary-card  .inner {
+  padding: 20px 15px;
+  border: 1px solid #e2c6c8;
+  border-radius: 15px;
+}
+.color-9810FA{
+  color: #9810FA;
+}
+.account-summary-card  .inner .current-account{
+  padding: 16px;
+  margin-top: 24px;
+  border: 1px solid #F9FAFB;
+  border-radius: 15px;
+}
+.account-summary-card  .inner .Savings-account{
+  padding: 16px;
+  margin-top: 15px;
+  border: 1px solid #F9FAFB;
+  border-radius: 15px;
+}
+.account-summary-card  .inner .credit-card {
+  padding: 16px;
+  margin-top: 15px;
+  border: 1px solid #F9FAFB;
+  border-radius: 15px;
+}
