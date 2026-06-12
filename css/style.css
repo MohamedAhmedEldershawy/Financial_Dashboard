@@ -620,13 +620,14 @@ a {
   font-weight: 700;
 }
 .monthly-bills-card .inner .title div span.pointer {
-  transition: cursor 0.3s;
+  transition: cursor 0.3s , color .2s;
 }
 .monthly-bills-card .inner .info {
   padding: 10px 0;
 }
 .monthly-bills-card .inner .title div span.pointer:hover {
   cursor: pointer;
+  color: #101828;
 }
 .color-D08700 {
   color: #d08700;
@@ -676,8 +677,12 @@ a {
   border: 1px solid #e2c6c8;
   border-radius: 15px;
 }
+.budget-overview-card .inner .title div span.pointer{
+  transition: all .2s;
+}
 .budget-overview-card .inner .title div span.pointer:hover {
   cursor: pointer;
+  color: #101828;
 }
 .budget-overview-card .inner .full-balance {
   padding: 20px 10px;
@@ -844,4 +849,124 @@ box-shadow: 0 3px 2px 2px #DCE0E4;
   border-radius: 20px;
   background-color: #00C950;
   margin-left: auto;
+}
+.income-vs-expenses-chart-card .inner .title div span.pointer {
+  transition: cursor 0.3s;
+}
+.income-vs-expenses-chart-card .inner .title div span.pointer{
+  transition: .3s;
+}
+.income-vs-expenses-chart-card .inner .title div span.pointer:hover {
+  cursor: pointer;
+  color: #101828;
+}
+.income-vs-expenses-chart-card {
+  margin-top: 20px;
+}
+.income-vs-expenses-chart-card .inner {
+  padding: 20px 15px;
+  border: 1px solid #e2c6c8;
+  border-radius: 15px;
+}
+.income-vs-expenses-chart-card .inner .parent{
+  width: 12px;
+  height: 12px;px ;
+  background-color:#EF4444 ;
+  border-radius: 3px;
+}
+
+.income-vs-expenses-chart-card .inner .child{
+  width: 12px;
+  height:12px ;
+  background-color:#10B981;
+  border-radius: 3px;
+}
+.color-64748b{
+  color: #64748b;
+}
+.income-vs-expenses-chart-card .inner .anylises{
+  padding-top: 65px;
+  gap: 60px;
+}
+.income-vs-expenses-chart-card .inner .anylises .align-item-end{
+  align-items: flex-end;
+}
+.income-vs-expenses-chart-card .inner .anylises .column-1{
+  width:16px ;
+  height:44px ;
+    background-color:#EF4444 ;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-1{
+  width:15px ;
+  height: 95px;
+background-color: #10B981;
+}
+.income-vs-expenses-chart-card .inner .anylises .column-2{
+  width:15px ;
+  height: 38px;
+  background-color:#EF4444 ;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-2{
+  width: 15px;
+  height: 91px;
+  background-color: #10B981;
+}
+.income-vs-expenses-chart-card .inner .anylises .column-3{
+  width: 15px ;
+  height:44px ;
+  background-color:#EF4444 ;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-3{
+  width: 15px;
+  height: 98px;
+background-color: #10B981;
+}
+.income-vs-expenses-chart-card .inner .anylises .column-4{
+  width: 15px;
+  height: 42px;
+  background-color:#EF4444 ;
+}
+.income-vs-expenses-chart-card .inner .anylises .min-column-4{
+  width:15px ;
+  height:92px ;
+  background-color: #10B981;
+}
+.account-summary-card .inner .title div span.pointer {
+  transition: cursor 0.3s;
+}
+.inner .title div span.pointer{
+  transition: .3s;
+}
+.account-summary-card  .inner .title div span.pointer:hover {
+  cursor: pointer;
+  color: #101828;
+}
+.account-summary-card {
+  margin-top: 20px;
+}
+.account-summary-card  .inner {
+  padding: 20px 15px;
+  border: 1px solid #e2c6c8;
+  border-radius: 15px;
+}
+.color-9810FA{
+  color: #9810FA;
+}
+.account-summary-card  .inner .current-account{
+  padding: 16px;
+  margin-top: 24px;
+  border: 1px solid #F9FAFB;
+  border-radius: 15px;
+}
+.account-summary-card  .inner .Savings-account{
+  padding: 16px;
+  margin-top: 15px;
+  border: 1px solid #F9FAFB;
+  border-radius: 15px;
+}
+.account-summary-card  .inner .credit-card {
+  padding: 16px;
+  margin-top: 15px;
+  border: 1px solid #F9FAFB;
+  border-radius: 15px;
 }
